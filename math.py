@@ -23,8 +23,8 @@ def fibonacci_2(n, memo):
 
 @lru_cache(maxsize=None)
 def fibonacci_3(n):
-    if n < 2:
-        return n
+    if n <= 2:
+        return 1
     return fibonacci_3(n - 1) + fibonacci_3(n - 2)
 
 
