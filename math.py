@@ -45,11 +45,6 @@ def min_int_element(a):
     return currentmin
 
 
-def min_int_element_2(a):
-    a.sort()
-    return a[0]
-
-
 # Is Even
 def is_even(n):
     return n % 2 == 0

@@ -44,11 +44,6 @@ function minIntElement(a) {
     return currentMin
 }
 
-function minIntElement2(a) {
-    a.sort()
-    return a[0]
-}
-
 // Is Even
 function isEven(n) {
     return n % 2 === 0
