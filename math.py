@@ -83,3 +83,96 @@ def factorial_2(n):
         return 1
     return n * factorial_2(n - 1)
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+string1 = "<<>><" # 4
+string2 = ">----<"
+string3 = "<--><>-<><>--><"
+string4 = "---<->><->-----"
+
+
+def solution(s):
+    salutes = 0
+    if len(s) < 2:
+        return salutes
+    s = list(s)
+    while s[0] != '>' or s[-1] != '<':
+        if s[0] != '>':
+            del s[0]
+        if s[-1] != '<':
+            del s[-1]
+    arrows = {}
+    for i in range(len(s)):
+        if s[i] == '<':
+            arrows[i] = '<'
+    for i in range(len(s)):
+        if s[i] == '>':
+            count = 0
+            for k, v in arrows.items():
+                if k < i:
+                    del arrows[k]
+                else:
+                    count += 2
+            salutes += count
+
+    return salutes
+
+
+print(solution(string4))
+
+
+# def solution(s):
+#     salutes = 0
+#     if len(s) < 2:
+#         return salutes
+#     s = list(s)
+#     while s[0] != '>' or s[-1] != '<':
+#         if s[0] != '>':
+#             del s[0]
+#         if s[-1] != '<':
+#             del s[-1]
+#     for i in range(len(s) - 1):
+#         if s[i] == '>':
+#             for j in range(i + 1, len(s)):
+#                 if s[j] == '<':
+#                     salutes += 2
+#     return salutes
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
